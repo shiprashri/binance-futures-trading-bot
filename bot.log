@@ -1,0 +1,214 @@
+2025-11-25 13:51:39,148 - ERROR - python-binance not installed. Install using: pip install python-binance
+2025-11-25 13:54:14,537 - INFO - Placing MARKET order: BTCUSDT BUY 0.01
+2025-11-25 13:54:15,223 - ERROR - Error placing market order
+Traceback (most recent call last):
+  File "C:\shipra-binance-bot\src\market_orders.py", line 19, in place_market_order
+    response = client.futures_create_order(
+        symbol=symbol,
+    ...<2 lines>...
+        quantity=quantity
+    )
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 7782, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 128, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 91, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 100, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2025-11-25 14:01:42,762 - INFO - Placing MARKET order: BTCUSDT BUY 0.01
+2025-11-25 14:01:44,199 - INFO - Order Response: {}
+2025-11-25 14:02:21,987 - INFO - Placing LIMIT order: BTCUSDT BUY 0.01 @ 90000.0
+2025-11-25 14:02:23,383 - INFO - Order Response: {}
+2025-11-25 14:07:38,002 - INFO - Placing MARKET order: BTCUSDT BUY 0.01
+2025-11-25 14:07:39,100 - INFO - Order Response: {'orderId': 10621068358, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ6eff6a55d636ffd4d8d8b4', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764059858748}
+2025-11-25 14:08:47,041 - INFO - Placing MARKET order: BTCUSDT BUY 0.01
+2025-11-25 14:08:48,551 - INFO - Order Response: {'orderId': 10621085706, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJd0b9ca60dc33234345ebb2', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764059928123}
+2025-11-25 14:09:02,783 - INFO - Placing LIMIT order: BTCUSDT BUY 0.01 @ 90000.0
+2025-11-25 14:09:03,708 - INFO - Order Response: {'orderId': 10621090410, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ4fdbbe23141f4950a65ce4', 'price': '90000.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764059943412}
+2025-11-25 14:14:43,165 - INFO - Placing STOP-LIMIT order: BTCUSDT qty=0.01 stop=95000.0 limit=94800.0
+2025-11-25 14:14:44,701 - ERROR - Error placing stop-limit order
+Traceback (most recent call last):
+  File "C:\shipra-binance-bot\src\advanced\stop_limit.py", line 22, in place_stop_limit
+    response = client.futures_create_order(
+        symbol=symbol,
+    ...<5 lines>...
+        timeInForce="GTC"
+    )
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 7782, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 128, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 91, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 100, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2021): Order would immediately trigger.
+2025-11-25 16:04:47,697 - INFO - Placing STOP-LIMIT order: BTCUSDT qty=0.01 stop=105000.0 limit=105200.0
+2025-11-25 16:04:49,644 - ERROR - Error placing stop-limit order
+Traceback (most recent call last):
+  File "C:\shipra-binance-bot\src\advanced\stop_limit.py", line 22, in place_stop_limit
+    response = client.futures_create_order(
+        symbol=symbol,
+    ...<5 lines>...
+        timeInForce="GTC"
+    )
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 7782, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 128, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 91, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 100, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2021): Order would immediately trigger.
+2025-11-25 16:06:25,570 - INFO - Placing STOP-LIMIT order: BTCUSDT qty=0.01 stop=50000.0 limit=49000.0
+2025-11-25 16:06:26,234 - INFO - Stop-Limit Order Response: {'orderId': 10623335202, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ64e1facb2dbc099db4c919', 'price': '49000.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'STOP', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '50000.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'STOP', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764066985914}
+2025-11-25 16:06:42,874 - INFO - Placing STOP-LIMIT order: BTCUSDT qty=0.01 stop=50000.0 limit=49000.0
+2025-11-25 16:06:43,705 - INFO - Stop-Limit Order Response: {'orderId': 10623340782, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJdabf82e211a4b390a0342a', 'price': '49000.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'STOP', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '50000.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'STOP', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764067003379}
+2025-11-25 16:06:53,114 - INFO - Placing STOP-LIMIT order: BTCUSDT qty=0.01 stop=150000.0 limit=150200.0
+2025-11-25 16:06:53,942 - ERROR - Error placing stop-limit order
+Traceback (most recent call last):
+  File "C:\shipra-binance-bot\src\advanced\stop_limit.py", line 22, in place_stop_limit
+    response = client.futures_create_order(
+        symbol=symbol,
+    ...<5 lines>...
+        timeInForce="GTC"
+    )
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 7782, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 128, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 91, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 100, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2021): Order would immediately trigger.
+2025-11-25 16:07:31,370 - INFO - Placing STOP-LIMIT order: BTCUSDT qty=0.01 stop=150000.0 limit=150200.0
+2025-11-25 16:07:32,335 - ERROR - Error placing stop-limit order
+Traceback (most recent call last):
+  File "C:\shipra-binance-bot\src\advanced\stop_limit.py", line 22, in place_stop_limit
+    response = client.futures_create_order(
+        symbol=symbol,
+    ...<5 lines>...
+        timeInForce="GTC"
+    )
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 7782, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 128, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 91, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 100, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2021): Order would immediately trigger.
+2025-11-25 17:20:24,478 - INFO - Placing OCO-like orders: BTCUSDT qty=0.01 TP=130000.0 SL=90000.0
+2025-11-25 17:20:26,341 - ERROR - Error placing OCO-like orders
+Traceback (most recent call last):
+  File "C:\shipra-binance-bot\src\advanced\oco.py", line 29, in place_oco
+    sl_order = client.futures_create_order(
+        symbol=symbol,
+    ...<3 lines>...
+        quantity=quantity
+    )
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 7782, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 128, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 91, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 100, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2021): Order would immediately trigger.
+2025-11-25 17:21:58,999 - INFO - Starting TWAP: BTCUSDT BUY total=0.04 chunks=4 qty/chunk=0.01 interval=2.0s
+2025-11-25 17:21:59,001 - INFO - TWAP chunk 1/4: placing MARKET order qty=0.01
+2025-11-25 17:21:59,932 - INFO - TWAP chunk response: {'orderId': 10624725143, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ5d8cca5c14816a285766d4', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764071519544}
+2025-11-25 17:22:01,934 - INFO - TWAP chunk 2/4: placing MARKET order qty=0.01
+2025-11-25 17:22:02,230 - INFO - TWAP chunk response: {'orderId': 10624726361, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ8e6b9a09d34cd86abed985', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764071521861}
+2025-11-25 17:22:04,231 - INFO - TWAP chunk 3/4: placing MARKET order qty=0.01
+2025-11-25 17:22:04,522 - INFO - TWAP chunk response: {'orderId': 10624727131, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ865202fc57e0dd6ccb6e5a', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764071524129}
+2025-11-25 17:22:06,523 - INFO - TWAP chunk 4/4: placing MARKET order qty=0.01
+2025-11-25 17:22:06,704 - INFO - TWAP chunk response: {'orderId': 10624727957, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJabaa6787536940eefaf6ea', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764071526413}
+2025-11-25 17:22:06,704 - INFO - TWAP completed.
+2025-11-25 17:22:29,919 - INFO - Running GRID for BTCUSDT | Range: 90000-100000 | Grid size=4
+2025-11-25 17:22:29,920 - INFO - Grid Levels: [90000.0, 92500.0, 95000.0, 97500.0, 100000.0]
+2025-11-25 17:22:31,112 - ERROR - Grid order failed at 90000.0: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+2025-11-25 17:22:31,274 - ERROR - Grid order failed at 92500.0: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+2025-11-25 17:22:31,659 - ERROR - Grid order failed at 95000.0: APIError(code=-4016): Limit price can't be higher than 91764.54.
+2025-11-25 17:22:31,863 - ERROR - Grid order failed at 97500.0: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+2025-11-25 17:22:32,018 - ERROR - Grid order failed at 100000.0: APIError(code=-4016): Limit price can't be higher than 91764.54.
+2025-11-26 11:41:58,855 - INFO - Placing MARKET order: BTCUSDT BUY 0.01
+2025-11-26 11:41:59,756 - INFO - Order Response: {'orderId': 10626871379, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJad782f6ff823c0c071096a', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764137519385}
+2025-11-26 11:42:13,984 - INFO - Placing LIMIT order: BTCUSDT BUY 0.01 @ 90000.0
+2025-11-26 11:42:15,196 - INFO - Order Response: {'orderId': 10626871515, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJc1256425279cef5ff7a651', 'price': '90000.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764137534824}
+2025-11-26 12:09:14,820 - INFO - Placing STOP-LIMIT order: BTCUSDT qty=0.01 stop=150000.0 limit=150200.0
+2025-11-26 12:09:15,595 - ERROR - Error placing stop-limit order
+Traceback (most recent call last):
+  File "C:\shipra-binance-bot\src\advanced\stop_limit.py", line 22, in place_stop_limit
+    response = client.futures_create_order(
+        symbol=symbol,
+    ...<5 lines>...
+        timeInForce="GTC"
+    )
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 7782, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 128, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 91, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 100, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2021): Order would immediately trigger.
+2025-11-26 12:09:25,303 - INFO - Placing OCO-like orders: BTCUSDT qty=0.01 TP=130000.0 SL=90000.0
+2025-11-26 12:09:27,782 - ERROR - Error placing OCO-like orders
+Traceback (most recent call last):
+  File "C:\shipra-binance-bot\src\advanced\oco.py", line 29, in place_oco
+    sl_order = client.futures_create_order(
+        symbol=symbol,
+    ...<3 lines>...
+        quantity=quantity
+    )
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 7782, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 128, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 91, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\shipr\AppData\Roaming\Python\Python313\site-packages\binance\client.py", line 100, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2021): Order would immediately trigger.
+2025-11-26 12:09:39,354 - INFO - Starting TWAP: BTCUSDT BUY total=0.04 chunks=4 qty/chunk=0.01 interval=2.0s
+2025-11-26 12:09:39,354 - INFO - TWAP chunk 1/4: placing MARKET order qty=0.01
+2025-11-26 12:09:40,506 - INFO - TWAP chunk response: {'orderId': 10626885498, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ86d6cded1d848aaad24e39', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764139180105}
+2025-11-26 12:09:42,506 - INFO - TWAP chunk 2/4: placing MARKET order qty=0.01
+2025-11-26 12:09:42,743 - INFO - TWAP chunk response: {'orderId': 10626885518, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ87269d9db565c875644408', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764139182435}
+2025-11-26 12:09:44,747 - INFO - TWAP chunk 3/4: placing MARKET order qty=0.01
+2025-11-26 12:09:44,985 - INFO - TWAP chunk response: {'orderId': 10626885535, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJadfb3b81a6755fb08f0d93', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764139184693}
+2025-11-26 12:09:46,992 - INFO - TWAP chunk 4/4: placing MARKET order qty=0.01
+2025-11-26 12:09:47,276 - INFO - TWAP chunk response: {'orderId': 10626885550, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ976ad49454a7a5f7d1f3d2', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.010', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1764139186913}
+2025-11-26 12:09:47,285 - INFO - TWAP completed.
